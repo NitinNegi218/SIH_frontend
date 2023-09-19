@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Cards from '../Cards';
 import './AboutUs.css';
 import Footer from '../Footer';
@@ -51,7 +51,12 @@ import axios from 'axios';
     const toggleOpen = () => {
       setIsOpen(!isOpen);
     };
-  
+
+    useEffect(() => {
+      // Scroll to the top of the page when the component mounts
+      window.scrollTo(0, 0);
+    }, []);
+
     return (
       <div className="faq-card">
         <div className={`faq-question ${isOpen ? 'open' : ''}`} onClick={toggleOpen}>

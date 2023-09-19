@@ -5,6 +5,7 @@ import Cards from '../Cards';
 import Footer from '../Footer';
 import axios from 'axios';
 import './Services.css';
+import CardItem from '../CardItem';
 
 function Services() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -30,7 +31,7 @@ function Services() {
 
     try {
       const response = await axios.post('/upload', formData);
-      setClassificationResult(response.data.result);
+      setClassificationResult(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -92,26 +93,16 @@ function Services() {
             </button>
           </form>
           {/* use this code after the backend call */}
-          {selectedImage ? (
+          {classificationResult ? (
             <>
-            <div class = "image-container">
-              <div class = "image-content">
-                <img 
-                  src = {selectedImage}
-                  alt = "Selected Image"
-                  style={{
-                    width : '300px',
-                    height : '400px',
-                    
-                  }}
-                />
-              </div>
-              <div class = "image-text">
-                <h1 class = "image-text-heading">RESULTS</h1>
-                <h3 class = "image-text-subheading">Plant Detected  : NEEM KA PATA</h3>
-                <p class = "image-text-description">Description : sdffsrd fgsdf sfsd fsdfs </p>
-              </div>
-            </div>
+    
+            <CardItem
+            src={selectedImage}
+            text={classificationResult.description}
+            label={classificationResult.result}
+            path='#'
+            />
+
             </>
           ) : (<p>The model was not able to classify the uploaded image</p>)}
           {/* <input
