@@ -104,7 +104,7 @@ function Services() {
             />
 
             </>
-          ) : (<p>The model was not able to classify the uploaded image</p>)}
+          ) : (<></>)}
           {/* <input
           type="file"
           accept="image/*"
