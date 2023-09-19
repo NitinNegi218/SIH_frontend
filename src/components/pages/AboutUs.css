@@ -1,0 +1,55 @@
+/* FAQ Container */
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* FAQ Question */
+  .faq-question {
+    background-color: #f0f0f0;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-question:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* FAQ Icon */
+  .faq-icon {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Open FAQ Question */
+  .faq-question.open {
+    background-color: #ddd;
+  }
+  
+  /* Open FAQ Icon */
+  .faq-icon.open::before {
+    content: '-';
+  }
+  
+  /* FAQ Answer */
+  .faq-answer {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    display: none;
+  }
+  
+  /* Show Answer When Open */
+  .faq-question.open + .faq-answer {
+    display: block;
+  }
+  
