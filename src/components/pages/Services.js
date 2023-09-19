@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useRef } from 'react';
 import Cards from '../Cards';
 import Footer from '../Footer';
@@ -17,6 +19,7 @@ function Services() {
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
+    setSelectedImage(URL.createObjectURL(event.target.files[0]));
   };
 
   const handleSubmit = async (event) => {
@@ -35,79 +38,90 @@ function Services() {
 
 
   // Function to handle file selection
-  const handleFileSelect = (event) => {
-    const file = event.target.files[0]; // Get the selected file
-    if (file) {
-      // Display the selected image
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setSelectedImage(e.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  // const handleFileSelect = () => {
+  //   const file = selectedFile; // Get the selected file
+  //   if (file) {
+  //     // Display the selected image
+  //     const reader = new FileReader();
+  //     reader.onload = (e) => {
+  //       setSelectedImage(e.target.result);
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh'}}>
-       <div>
-        {/* Left side content */}
-        {selectedImage && (
-          <div>
-          <div style={{ textAlign: 'center' }}>
-            <h2>Selected Image:</h2>
-            </div>
-            <div style={{ textAlign: 'right' }}>
-            <h2>RESULT</h2>
-            </div>
-            <div style={{ textAlign: 'left' }}>
-            <img src={selectedImage} alt="Uploaded" width="50%" />
-            </div>
-          </div>
-        )}
-      </div> 
+       
       <div style={{ textAlign: 'center' }}>
         {/* Right side content */}
         <h1>Upload and Display Image
         </h1><br></br>
+          <form onSubmit={handleSubmit}>
+            <div class ='Chikki'>
+              <label htmlFor="fileInput" className="custom-file-input">
+                
+                <div className="file-input-button">
+                  {selectedFile ? (<span>{selectedFile.name}</span>) : (<></>)}
+                  <span>Choose file</span>
+                </div>
+              </label>
+              <input
+                  type="file"
+                  id="fileInput"
+                  onChange={handleFileChange}
+                  accept=".jpg"
+                  style={{ display: 'none' }}
+                />
+            </div>
+            <button
+              type="submit"
+              style={{
+                backgroundColor: '#242222',
+                color: '#fff',
+                padding: '10px 20px',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                marginTop : '10px',
+              }}
+              onClick = {console.log(selectedImage)}
 
-        <input
+            >
+              UPLOAD
+            </button>
+          </form>
+          {/* use this code after the backend call */}
+          {selectedImage ? (
+            <>
+            <div class = "image-container">
+              <div class = "image-content">
+                <img 
+                  src = {selectedImage}
+                  alt = "Selected Image"
+                  style={{
+                    width : '300px',
+                    height : '400px',
+                    
+                  }}
+                />
+              </div>
+              <div class = "image-text">
+                <h1 class = "image-text-heading">RESULTS</h1>
+                <h3 class = "image-text-subheading">Plant Detected  : NEEM KA PATA</h3>
+                <p class = "image-text-description">Description : sdffsrd fgsdf sfsd fsdfs </p>
+              </div>
+            </div>
+            </>
+          ) : (<p>The model was not able to classify the uploaded image</p>)}
+          {/* <input
           type="file"
           accept="image/*"
           ref={fileInputRef}
           style={{ display: 'none' }}
           onChange={handleFileSelect}
-          
-        />
-          <form onSubmit={handleSubmit}>
-          <div class ='Chikki'>
-        <label htmlFor="fileInput" className="custom-file-input">
-          <input
-            type="file"
-            id="fileInput"
-            onChange={handleFileChange}
-            accept=".jpg"
-            style={{ display: 'none' }}
-          />
-          <div className="file-input-button">
-            <span>No file chosen</span>
-            <span>Choose file</span>
-          </div>
-        </label>
-        </div>
-        <button
-          type="submit"
-          style={{
-            backgroundColor: '#242222',
-            color: '#fff',
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
-        >
-          UPLOAD
-        </button>
-      </form>
+           */}
+      
 
       </div>
       {classificationResult && (

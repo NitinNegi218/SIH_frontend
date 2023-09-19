@@ -1,35 +1,55 @@
 /* CSS in a separate file or component */
-.custom-file-input {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  .file-input-button {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .file-input-button span {
-    flex: 1;
-    text-align: center;
-    padding: 5px 10px;
-    user-select: none;
-  }
-  
-  /* Style the file input text and button when hidden */
-  .custom-file-input input[type="file"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-  }
-  .Chikki{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center; 
-  }
+
+.file-input-button span {
+  flex: 1;
+  text-align: center;
+  padding: 5px 10px;
+  user-select: none;
+}
+
+/* Style the file input text and button when hidden */
+.custom-file-input input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.Chikki {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.image-text {
+  height: 100%;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.image-text-heading {
+  positon: absolute;
+  top: 0;
+}
+
+.image-text-subheading {
+  margin-top: 20px;
+}
+
+.image-text-description : {
+  margin-top: 20px;
+}
