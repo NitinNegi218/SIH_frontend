@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Cards from '../Cards';
 import './AboutUs.css';
 import Footer from '../Footer';
-import axios from 'axios';
+// import axios from 'axios';
 
 // function AboutUs() {
   // const [selectedImage, setSelectedImage] = useState(null);
