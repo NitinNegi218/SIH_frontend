@@ -8,10 +8,12 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^1.5.0",
     "build": "^0.1.4",
+    "postcss-nested": "^6.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
+    "serve": "^14.2.1",
     "start": "^5.1.0"
   },
   "scripts": {
@@ -38,9 +40,15 @@
   "proxy": "http://127.0.0.1:8080/",
   "devDependencies": {
     "autoprefixer": "^10.4.15",
+    "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.1",
     "gh-pages": "^6.0.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "node-sass": "^7.0.3",
     "postcss": "^8.4.30",
-    "sass": "^1.67.0"
+    "sass": "^1.67.0",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.0.0"
   }
 }

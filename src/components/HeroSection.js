@@ -10,7 +10,7 @@ function HeroSection() {
   return (
     <div className='hero-container'>
       <h1>MEDICINAL PLANTS</h1>
-      <p>Serach the plant using button below</p>
+      <p>Search the plant using button below</p>
       <div className='hero-btns'>
         <Button
           className='btns'
