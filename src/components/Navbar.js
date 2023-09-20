@@ -30,7 +30,6 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu} >
-            {/* <i class='fab fa-typo3' /> */}
             
               <img src="/favicon-32x32.png" alt="Logo" className='logo-image' />
               <span className='logo-text'>Sankalp</span>
@@ -54,15 +53,6 @@ function Navbar() {
                 Services
               </Link>
             </li>
-            {/* <li className='nav-item'>
-              <Link
-                to='/products'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-              About us
-              </Link>
-            </li> */}
 
             <li>
               <Link
@@ -74,7 +64,6 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
         </div>
       </nav>
     </>

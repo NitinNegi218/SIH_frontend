@@ -51,7 +51,6 @@ const email = 'nitinnegi27.nn@gmail.com';
           <h2>
           <Link
                 to='/AboutUs'
-                //className='nav-links'
                 onClick={closeMobileMenu}
               >
                 About Us
@@ -74,61 +73,20 @@ const email = 'nitinnegi27.nn@gmail.com';
         </div>
      
           
-      {/* </div> */}
+
       <section class='social-media'>
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
             
-              {/* <i class='fab fa-typo3' /> */}
+            
               <img src="/favicon-32x32.png" alt="Logo" className='logo-image' />
               <span className='logo-text'> Sankalp</span>
          
             </Link>
           </div>
           <small class='website-rights'>SANKALP © 2023</small>
-          {/* <div class='social-icons'>
-            <Link
-              class='social-icon-link facebook'
-              to='/'
-              target='_blank'
-              aria-label='Facebook'
-            >
-              <i class='fab fa-facebook-f' />
-            </Link>
-            <Link
-              class='social-icon-link instagram'
-              to='/'
-              target='_blank'
-              aria-label='Instagram'
-            >
-              <i class='fab fa-instagram' />
-            </Link>
-            <Link
-              class='social-icon-link youtube'
-              to='/'
-              target='_blank'
-              aria-label='Youtube'
-            >
-              <i class='fab fa-youtube' />
-            </Link>
-            <Link
-              class='social-icon-link twitter'
-              to='/'
-              target='_blank'
-              aria-label='Twitter'
-            >
-              <i class='fab fa-twitter' />
-            </Link>
-            <Link
-              class='social-icon-link twitter'
-              to='/'
-              target='_blank'
-              aria-label='LinkedIn'
-            >
-              <i class='fab fa-linkedin' />
-            </Link>
-          </div> */}
+
         </div>
       </section>
     </div>
